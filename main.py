@@ -20,5 +20,5 @@ Y = np.array(results)
     #print(f"Matchday {matchday}: {home_team.get('name')} ({', '.join(map(str, standings[home_team.get('id')]))}) {score.get('home')} - {score.get('away')} ({', '.join(map(str, standings[away_team.get('id')]))}) {away_team.get('name')}")
 
 neural_network.train(X, Y, 10_000, 0.1)
-output = neural_network.predict(np.array([[0.87, 2, 2.15, 12]]))
+output = neural_network.predict(np.array([[0.87, 0.4, 2.15, 2.4]]))
 print(f"{'Home win' if round(output[0]) == 1 else 'Away win'} with {(output[0]*100 if round(output[0]) == 1 else (1-output[0])*100):.2f}% certainty")

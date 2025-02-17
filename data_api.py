@@ -56,7 +56,7 @@ def get_data(competition, season, matchday):
         team_form_string = standing.get('form')
         team_form = team_form_string.count('W') * 3 + team_form_string.count('D')
         
-        standings[team_id] = [team_points / (matchday-1), team_form]
+        standings[team_id] = [team_points / (matchday-1), team_form / 5]
 
     matches, results = [], []
 
